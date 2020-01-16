@@ -1,0 +1,11 @@
+select 
+n.dr_acc_no, n.dr_name, n.dr_smiles, n.inchi_key, n.CAS_NO, n.dr_mol_WT, n.dr_mol_formula, n.pubchem_id, n.IUPAC, 
+n.dr_ei, n.dr_2D, n.dr_3D,
+ n.met_acc_no,  n.met_smiles, n.met_mol_wt, n.met_mol_formula, n.met_ei, n.met_2D, n.met_3D,
+reactive_centre, fukui_function, local_ei
+from new_table n
+   join new_table2  
+on 
+n.dr_name =new_table2.dr_name
+where n.dr_name = 'lumiracoxib'
+group by n.dr_name
